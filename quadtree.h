@@ -104,6 +104,7 @@ public:
 
     Rect boundary; // 當前節點的邊界 (x, y, w, h)
     uint32_t capacity;  // 容量
+    // TODO: Use raw array?
     std::vector<Point> data; // 點資料
     quadtree *child[4] = {nullptr};
 };

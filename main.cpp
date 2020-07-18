@@ -21,6 +21,7 @@ int main()
     //
     vector<Body> bodyList;
     int genLimit[4] = {10, 300, 10, 300};
+    quadtree qt({0.f, 0.f, 1280.f, 720.f}, 4);
     //
     sf::Clock clk, imgui;
     float elapsed = 0.f, fpsElapsed = 0.f;
@@ -63,7 +64,7 @@ int main()
         // Update
 
         // Build quad tree
-        quadtree qt({0.f, 0.f, 1280.f, 720.f}, 4);
+        qt.clear();
         // Insert all points of all bodies
         for(auto &r : bodyList)
             r.insertPoints(qt);
